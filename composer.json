@@ -1,0 +1,24 @@
+{
+    "name": "arthurguy/oauth2server",
+    "description": "Laravel Package for the OAuth2 Server Library",
+    "authors": [
+        {
+            "name": "Arthur Guy",
+            "email": "arthur@arthurguy.co.uk"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "5.0.*",
+        "league/oauth2-server": "dev-develop as 4.0.0"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-4": {
+            "ArthurGuy\\OAuth2Server\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
