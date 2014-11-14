@@ -30,10 +30,12 @@ class SessionRepository extends Adapter implements SessionInterface
      */
     public function associateScope(SessionEntity $session, ScopeEntity $scope)
     {
+        /*
         SessionTokenScope::create([
             'session_access_token_id' => $session->getId(),
             'scope_id'                => $scope->getId(),
         ]);
+        */
     }
 
     /**
@@ -45,13 +47,14 @@ class SessionRepository extends Adapter implements SessionInterface
      */
     public function getScopes(SessionEntity $session)
     {
+        /*
         $scopes = SessionTokenScope::join('oauth_session_access_tokens', 'oauth_session_access_tokens.id', '=', 'oauth_session_token_scopes.session_access_token_id')
             ->join('oauth_scopes', 'oauth_scopes.id', '=', 'oauth_session_token_scopes.scope_id')
             ->select('oauth_scopes.*')
-            ->where('oauth_session_access_tokens.access_token', $accessToken)
+            ->where('oauth_session_access_tokens.access_token', $session->accessToken)
             ->get();
-
-        return $scopes;
+        */
+        return [];
     }
 
     /**
@@ -94,7 +97,6 @@ class SessionRepository extends Adapter implements SessionInterface
      */
     public function create($ownerType, $ownerId, $clientId, $clientRedirectUri = null)
     {
-        // TODO: Implement create() method.
         $session = Session::create([
                 'client_id'  => $clientId,
                 'owner_type' => $ownerType,
