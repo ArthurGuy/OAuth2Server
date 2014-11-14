@@ -47,6 +47,9 @@ class OAuth2ServerServiceProvider extends ServiceProvider {
             'League\\OAuth2\\Server\\Storage\\AccessTokenInterface',
             'ArthurGuy\\OAuth2Server\\Repositories\\AccessTokenRepository'
         );
+
+        $this->app->singleton('ResourceAuth', 'League\OAuth2\Server\ResourceServer');
+
 	}
 
 	/**
